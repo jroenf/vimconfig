@@ -1,0 +1,29 @@
+= Roens persoonlijke vim config =
+
+Heavilly based upon the ultimate vimrc file from spf13.
+
+== Installatie ==
+Al deze files gaan in de ~\.vim folder, behalve de .vimrc file.
+Die gaat in de ~ folder.
+
+=== Pathogen ===
+Om te zorgen dat de pathogen werkt heb ik drie 
+dingen gedaan:
+
+ - De autoload map staat in de ~\.vim\ directory.
+ - Daar is ook een map 'bundle' aangemaakt
+ - In de ~\.vimrc file (werkt in windows!) heb ik toegevoegd:
+
+"van de spf13-vimrc:
+set nocompatible
+set background-dark
+if has('win32')|| has('win64')
+set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+endif
+
+"van de pathogen git site:
+runtime! autoload/pathogen.vim
+silent! autoload/pathogen.vim
+silent! call pathogen#helptags()
+silent! call pathogen#runtime_append_all_bundles()
+
